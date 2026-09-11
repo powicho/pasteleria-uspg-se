@@ -9,7 +9,7 @@ Sistema Experto basado en reglas para la recomendación y personalización de pa
 - pytest (Framework de pruebas automatizadas)
 
 ## Estructura del Repositorio
-
+```text
 pasteleria-uspg-se/
 ├── backend/
 │   ├── pasteleria.clp    # Base de conocimientos (deftemplates y defrules)
@@ -18,7 +18,7 @@ pasteleria-uspg-se/
 │   └── test_motor.py     # Suite de pruebas unitarias
 ├── requirements.txt      # Dependencias del proyecto
 └── README.md
-
+```
 Instalación y Configuración
 
 Clonar el repositorio:
