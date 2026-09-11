@@ -9,11 +9,12 @@ Sistema Experto basado en reglas para la recomendación y personalización de pa
 - pytest (Framework de pruebas automatizadas)
 
 ## Estructura del Repositorio
-```text
-├── backend
+
+pasteleria-uspg-se/
+├── backend/
 │   ├── pasteleria.clp    # Base de conocimientos (deftemplates y defrules)
 │   └── motor.py          # Clase MotorPasteleria en Python
-├── tests
+├── tests/
 │   └── test_motor.py     # Suite de pruebas unitarias
 ├── requirements.txt      # Dependencias del proyecto
 └── README.md
@@ -21,7 +22,7 @@ Sistema Experto basado en reglas para la recomendación y personalización de pa
 Instalación y Configuración
 
 Clonar el repositorio:
-git clone https://github.com/TU-USUARIO/pasteleria-uspg-se.git
+git clone https://github.com/powicho/pasteleria-uspg-se.git
 cd pasteleria-uspg-se
 
 ## Crear y activar un entorno virtual:
