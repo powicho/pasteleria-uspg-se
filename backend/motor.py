@@ -1,5 +1,7 @@
 import os
+from typing import Any, Dict
 import clips
+from backend.modelos import SolicitudRecomendacion
 
 
 class MotorPasteleria:
@@ -46,8 +48,8 @@ class MotorPasteleria:
     )
     self.env.assert_string(fact_str)
 
-  def resolver(self) -> dict:
-    """Ejecuta la inferencia y retorna el hecho resultado como diccionario."""
+  def resolver(self) -> Dict[str, Any]:
+    """Ejecuta la inferencia y extrae el hecho 'resultado' generado por CLIPS."""
     self.env.run()
 
     for fact in self.env.facts():
@@ -69,3 +71,26 @@ class MotorPasteleria:
         "justificacion": "Entrada fuera de cobertura de reglas.",
         "regla": "NINGUNA",
     }
+
+  def procesar_peticion(
+      self, solicitud: SolicitudRecomendacion
+  ) -> Dict[str, Any]:
+    """Método directo para atender solicitudes desde FastAPI limpiando el entorno."""
+    self.reiniciar()
+    self.establecer_solicitud(
+        modo=solicitud.modo,
+        restriccion=solicitud.restriccion or "ninguna",
+        perfil=solicitud.perfil or "ninguno",
+    )
+
+    if solicitud.componentes:
+      for comp in solicitud.componentes:
+        self.agregar_componente(
+            tipo=comp.tipo,
+            nombre=comp.nombre,
+            categoria=comp.categoria,
+            densidad=comp.densidad or "ligera",
+            contiene_lactosa=comp.contiene_lactosa or "no",
+        )
+
+    return self.resolver()
