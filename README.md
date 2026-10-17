@@ -47,7 +47,6 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 
-
 ## Instalar dependencias:
 
 Asegúrate de tener tu terminal con `(.venv)` activado y ejecuta:
@@ -56,17 +55,26 @@ Asegúrate de tener tu terminal con `(.venv)` activado y ejecuta:
 pip install -r requirements.txt
 uvicorn backend.main:app --reload
 
-
 ## Ejecución de Pruebas Automatizadas
 Ejecuta en tu terminal lo siguiente:
 pytest -v
-
 
 ## Extras:
 FastAPI genera automáticamente la documentación interactiva sin necesidad de crear un frontend adicional. Con el servidor corriendo, abre en tu navegador:
 👉 http://127.0.0.1:8000/docs
 
-Desde esta interfaz podrás:
-1. Probar el endpoint GET /api/v1/health.
-2. Consultar el catálogo con GET /api/v1/ingredientes.
-3. Enviar peticiones en tiempo real con POST /api/v1/recomendar y observar cómo razona el motor CLIPSpy devolviendo la recomendación en formato JSON.
+## Ejecución del Frontend (Interfaz de Usuario)
+
+Con el backend en ejecución:
+1. Dirígete a la carpeta `frontend/Vista 1/`.
+2. Abre el archivo **`index.html`** con la extensión **Live Server** de VS Code (o haz doble clic sobre él para abrirlo en el navegador).
+3. La interfaz se conectará en tiempo real al backend mostrando el indicador **`● API Online`** en verde.
+
+---
+
+## 🧪 Ejecución de Pruebas Automatizadas
+Para verificar que las reglas de inferencia, restricciones y endpoints sigan pasando al 100%:
+en bash
+pytest -v
+
+
