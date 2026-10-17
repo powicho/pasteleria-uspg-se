@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastelería USPG - Vista 3: Veredicto</title>
+  <link rel="stylesheet" href="vista3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-brand">
+      <img src="../img/logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+      <span id="logo-fallback" style="display:none; font-size:28px;"></span>
+      <div class="brand-text">
+        <span class="brand-title">Pastelería</span>
+        <span class="brand-sub">U S P G</span>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="status-pill"><span class="status-dot"></span><span>API Online</span></div>
+      <div class="uspg-badge">SAN PABLO</div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="card-panel">
+      <div class="view-header">
+        <h2>VISTA 3 · Veredicto del Experto</h2>
+        <p>Resultado del razonamiento generado por el motor CLIPS.</p>
+      </div>
+
+      <!-- BANNER DE ESTADO -->
+      <div class="status-banner" id="banner-estado">
+        <span id="banner-icon">✔</span>
+        <span id="banner-texto">Viable — ¡Combinación perfecta aprobada!</span>
+      </div>
+
+      <!-- CHIPS -->
+      <div class="chips-row">
+        <div class="chip">
+          <small>Bizcocho</small>
+          <strong id="chip-bizcocho">-</strong>
+        </div>
+        <div class="chip">
+          <small>Relleno</small>
+          <strong id="chip-relleno">-</strong>
+        </div>
+        <div class="chip">
+          <small>Cobertura</small>
+          <strong id="chip-cobertura">-</strong>
+        </div>
+      </div>
+
+      <!-- TARJETA EXPLICABILIDAD -->
+      <div class="expert-box">
+        <h4>Criterio del Chef Pastelero</h4>
+        <p class="expert-msg" id="txt-mensaje">Cargando...</p>
+        <div class="expert-just">
+          <small><strong>Justificación técnica:</strong></small>
+          <p id="txt-justificacion">...</p>
+        </div>
+        <span class="badge-regla" id="txt-regla">Regla: -</span>
+      </div>
+
+      <div class="action-row">
+        <button type="button" class="btn-primary" onclick="volver()">Diseñar otro pastel</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="vista3.js"></script>
+</body>
+</html>

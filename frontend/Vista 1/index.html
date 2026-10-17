@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastelería USPG - Vista 1: Pastel de Autor</title>
+  <link rel="stylesheet" href="vista1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <img src="../img/logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+      <span id="logo-fallback" style="display:none; font-size:28px;"></span>
+      <div class="brand-text">
+        <span class="brand-title">Pastelería</span>
+        <span class="brand-sub">U S P G</span>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="status-pill" id="api-status">
+        <span class="status-dot"></span>
+        <span id="api-status-text">API Online</span>
+      </div>
+      <div class="uspg-badge">SAN PABLO</div>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN ENTRE VISTAS -->
+  <main class="main-container">
+    <nav class="mode-switch-container">
+      <a href="index.html" class="mode-btn active">Recomendación Guiada</a>
+      <a href="../Vista 2/vista2.html" class="mode-btn">Personalización Libre</a>
+    </nav>
+
+    <section class="card-panel">
+      <div class="view-header">
+        <h2>VISTA 1 · Encuentra tu pastel de autor</h2>
+        <p>Cuéntanos qué te gusta y el Maestro Pastelero elige por ti.</p>
+      </div>
+
+      <!-- RESTRICCIÓN -->
+      <div class="filter-group">
+        <label class="group-label">Restricción dietética</label>
+        <div class="pill-selector">
+          <button type="button" class="pill-btn active" id="btn-rest-ninguna" onclick="seleccionarRestriccion('ninguna')">Ninguna</button>
+          <button type="button" class="pill-btn" id="btn-rest-lactosa" onclick="seleccionarRestriccion('sin-lactosa')">Sin lactosa</button>
+        </div>
+      </div>
+
+      <!-- PERFILES -->
+      <div class="filter-group">
+        <label class="group-label">Perfil gustativo</label>
+        <div class="profile-cards-grid">
+          
+          <div class="profile-card active" id="card-citrico" onclick="seleccionarPerfil('citrico-ligero', this)">
+            <span class="color-dot" style="background-color: #F4D03F;"></span>
+            <h3>Cítrico Ligero</h3>
+            <p>Sabores frescos, bajo dulzor y toque ácido.</p>
+          </div>
+
+          <div class="profile-card" id="card-choco" onclick="seleccionarPerfil('chocolatoso-denso', this)">
+            <span class="color-dot" style="background-color: #5D4037;"></span>
+            <h3>Chocolatoso Denso</h3>
+            <p>Amor por el cacao, consistencia húmeda y ganache.</p>
+          </div>
+
+          <div class="profile-card" id="card-frutal" onclick="seleccionarPerfil('frutal-saludable', this)">
+            <span class="color-dot" style="background-color: #C0392B;"></span>
+            <h3>Frutal Saludable</h3>
+            <p>Frutos rojos, frescura natural y base vegetal.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="action-row">
+        <button type="button" class="btn-primary" onclick="consultarExperto()">Consultar al Maestro Pastelero</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="vista1.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+:root {
+  --primary: #8A1C14;
+  --primary-hover: #731610;
+  --bg-page: #FAF7F6;
+  --bg-card: #FFFFFF;
+  --text-dark: #2A1D1D;
+  --text-muted: #736767;
+  --border-light: #ECE5E3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 44px;
+  width: auto;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.brand-sub {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--primary);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #27AE60;
+  background: #E8F8F5;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #27AE60;
+}
+
+.uspg-badge {
+  background: var(--primary);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+}
+
+/* CONTENEDOR VISTA 3 */
+.main-container {
+  max-width: 840px;
+  margin: 36px auto;
+  padding: 0 20px;
+}
+
+.card-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 36px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.view-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.view-header h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.view-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* BANNERS DE ESTADO */
+.status-banner {
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.banner-viable {
+  background: #D5F5E3;
+  color: #1E8449;
+}
+
+.banner-ajustada {
+  background: #FDEBD0;
+  color: #B9770E;
+}
+
+.banner-incompleto {
+  background: #FADBD8;
+  color: #922B21;
+}
+
+/* CHIPS DE LA RECETA FINAL */
+.chips-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.chip {
+  flex: 1;
+  border: 1.5px solid var(--primary);
+  border-radius: 30px;
+  padding: 10px 18px;
+  background: #FFF9F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.chip small {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.chip strong {
+  font-size: 13px;
+  color: var(--text-dark);
+}
+
+/* TARJETA DE EXPLICABILIDAD */
+.expert-box {
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 24px;
+  background: #FFFFFF;
+  margin-bottom: 24px;
+}
+
+.expert-box h4 {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.expert-msg {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.expert-just {
+  background: #FAF7F6;
+  border-left: 3px solid var(--primary);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.badge-regla {
+  display: inline-block;
+  background: #F2EEEE;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: #665C5C;
+}
+
+/* BOTONES */
+.action-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 13px 36px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}

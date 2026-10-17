@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastelería USPG - Vista 4: Resumen de tu Pastel</title>
+  <link rel="stylesheet" href="vista4.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-brand">
+      <img src="../img/logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+      <span id="logo-fallback" style="display:none; font-size:28px;"></span>
+      <div class="brand-text">
+        <span class="brand-title">Pastelería</span>
+        <span class="brand-sub">U S P G</span>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="status-pill"><span class="status-dot"></span><span>API Online</span></div>
+      <div class="uspg-badge">SAN PABLO</div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="card-panel">
+      <div class="view-header">
+        <h2>VISTA 4 · Resumen de tu pastel</h2>
+        <p>Revisa tu combinación y lee la recomendación del maestro pastelero antes de continuar.</p>
+      </div>
+
+      <!-- COMBINACIÓN ACTUAL -->
+      <div class="sub-header-row">
+        <strong>Tu combinación</strong>
+        <span class="status-tag">✔ 3 de 3 completos</span>
+      </div>
+
+      <div class="chips-row">
+        <div class="chip">
+          <small>Bizcocho</small>
+          <strong id="v4-bizcocho">Vainilla</strong>
+        </div>
+        <div class="chip">
+          <small>Relleno</small>
+          <strong id="v4-relleno">Curd de Maracuyá</strong>
+        </div>
+        <div class="chip">
+          <small>Cobertura</small>
+          <strong id="v4-cobertura">Ganache de Chocolate</strong>
+        </div>
+      </div>
+
+      <!-- BANNER -->
+      <div class="banner-compatible" id="v4-banner">
+        <span>✔</span>
+        <span id="v4-banner-text">Combinación completa y compatible — ¡Lista para hornear!</span>
+      </div>
+
+      <!-- TARJETA DEL MAESTRO PASTELERO -->
+      <div class="expert-box">
+        <div class="expert-header">
+          <span style="font-size:22px;">👨‍🍳</span>
+          <div>
+            <strong>Maestro Pastelero</strong><br>
+            <small>Chef Pastelero USPG · Validación de compatibilidad</small>
+          </div>
+        </div>
+        <div class="expert-content">
+          <span class="veredicto-title">Veredicto de Compatibilidad</span>
+          <h4 id="v4-titulo-veredicto">Recomendación del maestro: equilibrio de sabores</h4>
+          <p class="expert-desc" id="v4-desc-veredicto">Cargando...</p>
+        </div>
+      </div>
+
+      <!-- AFINACIÓN RÁPIDA DE INGREDIENTES -->
+      <div class="tweak-box">
+        <h4>¿Quieres cambiar algún ingrediente?</h4>
+        <small class="tweak-sub">Selecciona una alternativa si la recomendación del maestro no es de tu gusto.</small>
+
+        <div class="tweak-rows">
+          <div class="tweak-item">
+            <span>Capa 1: Bizcocho</span>
+            <select id="sel-bizcocho" onchange="recalcular()">
+              <option value="limon">Limón (Cítrico)</option>
+              <option value="chocolate-humedo">Chocolate Húmedo (Amargo)</option>
+              <option value="vainilla" selected>Vainilla (Dulce)</option>
+              <option value="zanahoria">Zanahoria (Dulce)</option>
+            </select>
+          </div>
+
+          <div class="tweak-item">
+            <span>Capa 2: Relleno</span>
+            <select id="sel-relleno" onchange="recalcular()">
+              <option value="maracuya" selected>Curd de Maracuyá</option>
+              <option value="frutos-rojos">Mermelada Frutos Rojos</option>
+              <option value="tres-leches">Tres Leches (Lácteo)</option>
+              <option value="dulce-de-leche">Dulce de Leche (Lácteo)</option>
+            </select>
+          </div>
+
+          <div class="tweak-item">
+            <span>Capa 3: Cobertura</span>
+            <select id="sel-cobertura" onchange="recalcular()">
+              <option value="merengue-italiano">Merengue Italiano</option>
+              <option value="chantilly">Chantilly (Lácteo)</option>
+              <option value="ganache" selected>Ganache de Chocolate</option>
+              <option value="crema-vegetal">Crema Vegetal</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions-split">
+        <button type="button" class="btn-secondary" onclick="window.location.href='../Vista 2/vista2.html'">Editar combinación</button>
+        <button type="button" class="btn-primary" onclick="confirmar()">Confirmar y continuar</button>
+      </div>
+
+      <div class="action-footer">
+        <a href="../Vista 1/index.html" class="link-reset">Diseñar otro pastel</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="vista4.js"></script>
+</body>
+</html>

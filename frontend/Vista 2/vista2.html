@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastelería USPG - Vista 2: Arma tu pastel</title>
+  <link rel="stylesheet" href="vista2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-brand">
+      <img src="../img/logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+      <span id="logo-fallback" style="display:none; font-size:28px;"></span>
+      <div class="brand-text">
+        <span class="brand-title">Pastelería</span>
+        <span class="brand-sub">U S P G</span>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="status-pill"><span class="status-dot"></span><span>API Online</span></div>
+      <div class="uspg-badge">SAN PABLO</div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <nav class="mode-switch-container">
+      <a href="../Vista 1/index.html" class="mode-btn">Recomendación Guiada</a>
+      <a href="vista2.html" class="mode-btn active">Personalización Libre</a>
+    </nav>
+
+    <section class="card-panel">
+      <div class="view-header">
+        <h2>VISTA 2 · Arma tu pastel capa por capa</h2>
+      </div>
+
+      <!-- SWITCH LACTOSA -->
+      <div class="lactose-box">
+        <span>¿Tienes intolerancia a la lactosa?</span>
+        <label class="switch-container">
+          <span class="switch-text" id="lbl-lactosa">Desactivado</span>
+          <input type="checkbox" id="chk-lactosa" onchange="toggleLactosa(this.checked)">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="builder-layout">
+        <div class="columns-grid">
+          
+          <!-- BIZCOCHOS -->
+          <div class="col-item">
+            <h4 class="col-title">CAPA 1 · Bizcocho (base)</h4>
+            <div class="cards-list" id="col-bizcochos">
+              <div class="option-card active" onclick="seleccionar('bizcocho', 'limon', 'citrico', 'ligera', 'no', '#F4D03F', this)">
+                <span class="dot" style="background:#F4D03F;"></span>
+                <div><strong>Limón</strong><small>Cítrico / Ligera</small></div>
+              </div>
+              <div class="option-card" onclick="seleccionar('bizcocho', 'chocolate-humedo', 'amargo', 'densa', 'no', '#5D4037', this)">
+                <span class="dot" style="background:#5D4037;"></span>
+                <div><strong>Chocolate Húmedo</strong><small>Amargo / Densa</small></div>
+              </div>
+              <div class="option-card" onclick="seleccionar('bizcocho', 'vainilla', 'dulce', 'ligera', 'no', '#F9E79F', this)">
+                <span class="dot" style="background:#F9E79F;"></span>
+                <div><strong>Vainilla</strong><small>Dulce / Ligera</small></div>
+              </div>
+              <div class="option-card" onclick="seleccionar('bizcocho', 'zanahoria', 'dulce', 'densa', 'no', '#E67E22', this)">
+                <span class="dot" style="background:#E67E22;"></span>
+                <div><strong>Zanahoria</strong><small>Dulce / Densa</small></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RELLENOS -->
+          <div class="col-item">
+            <h4 class="col-title">CAPA 2 · Relleno (centro)</h4>
+            <div class="cards-list" id="col-rellenos">
+              <div class="option-card" onclick="seleccionar('relleno', 'maracuya', 'frutal', 'ligera', 'no', '#F39C12', this)">
+                <span class="dot" style="background:#F39C12;"></span>
+                <div><strong>Curd de Maracuyá</strong><small>Frutal / Sin lactosa</small></div>
+              </div>
+              <div class="option-card active" onclick="seleccionar('relleno', 'frutos-rojos', 'frutal', 'ligera', 'no', '#C0392B', this)">
+                <span class="dot" style="background:#C0392B;"></span>
+                <div><strong>Mermelada Frutos Rojos</strong><small>Frutal / Sin lactosa</small></div>
+              </div>
+              <div class="option-card lacteo" onclick="seleccionar('relleno', 'tres-leches', 'cremoso', 'ligera', 'si', '#EDBB99', this)">
+                <span class="dot" style="background:#EDBB99;"></span>
+                <div><strong>Tres Leches</strong><small>Cremoso / Con lactosa</small></div>
+              </div>
+              <div class="option-card lacteo" onclick="seleccionar('relleno', 'dulce-de-leche', 'cremoso', 'ligera', 'si', '#D35400', this)">
+                <span class="dot" style="background:#D35400;"></span>
+                <div><strong>Dulce de Leche</strong><small>Cremoso / Con lactosa</small></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COBERTURAS -->
+          <div class="col-item">
+            <h4 class="col-title">CAPA 3 · Cobertura (exterior)</h4>
+            <div class="cards-list" id="col-coberturas">
+              <div class="option-card" onclick="seleccionar('cobertura', 'merengue-italiano', 'ligera', 'ligera', 'no', '#FFFFFF', this)">
+                <span class="dot" style="background:#FFFFFF; border:1px solid #CCC;"></span>
+                <div><strong>Merengue Italiano</strong><small>Ligera / Sin lactosa</small></div>
+              </div>
+              <div class="option-card lacteo" onclick="seleccionar('cobertura', 'chantilly', 'ligera', 'ligera', 'si', '#F8F9F9', this)">
+                <span class="dot" style="background:#F8F9F9; border:1px solid #CCC;"></span>
+                <div><strong>Chantilly</strong><small>Ligera / Con lactosa</small></div>
+              </div>
+              <div class="option-card" onclick="seleccionar('cobertura', 'ganache', 'densa', 'densa', 'no', '#3E2723', this)">
+                <span class="dot" style="background:#3E2723;"></span>
+                <div><strong>Ganache de Chocolate</strong><small>Densa / Sin lactosa</small></div>
+              </div>
+              <div class="option-card active" onclick="seleccionar('cobertura', 'crema-vegetal', 'vegetal', 'ligera', 'no', '#D5F5E3', this)">
+                <span class="dot" style="background:#79f7af;"></span>
+                <div><strong>Crema Vegetal</strong><small>Vegetal / Sin lactosa</small></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PREVIEW DINÁMICO -->
+        <aside class="preview-box">
+          <h4>VISTA PREVIA</h4>
+          <div class="cake-display">
+            <div class="tier tier-top" id="prev-cobertura" style="background:#79f7af;"></div>
+            <div class="tier tier-mid" id="prev-relleno" style="background:#C0392B;"></div>
+            <div class="tier tier-base" id="prev-bizcocho" style="background:#F4D03F;"></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="action-row">
+        <button type="button" class="btn-primary" onclick="validarCombinacion()">Validar Compatibilidad Gastronómica</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="vista2.js"></script>
+</body>
+</html>

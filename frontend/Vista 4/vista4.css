@@ -1,0 +1,335 @@
+:root {
+  --primary: #8A1C14;
+  --primary-hover: #731610;
+  --bg-page: #FAF7F6;
+  --bg-card: #FFFFFF;
+  --text-dark: #2A1D1D;
+  --text-muted: #736767;
+  --border-light: #ECE5E3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 44px;
+  width: auto;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.brand-sub {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--primary);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #27AE60;
+  background: #E8F8F5;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #27AE60;
+}
+
+.uspg-badge {
+  background: var(--primary);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+}
+
+/* CONTENEDOR VISTA 4 */
+.main-container {
+  max-width: 820px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.card-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 36px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.view-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.view-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.view-header p {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* RESUMEN COMBINACIÓN */
+.sub-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.status-tag {
+  background: #E8F8F5;
+  color: #1E8449;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.chips-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.chip {
+  flex: 1;
+  border: 1.5px solid var(--primary);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #FFF9F8;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chip small {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.chip strong {
+  font-size: 13px;
+  color: var(--text-dark);
+}
+
+/* BANNERS */
+.banner-compatible {
+  background: #E8F8F5;
+  color: #1E8449;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.banner-incompatible {
+  background: #FDEBD0;
+  color: #B9770E;
+}
+
+/* TARJETA MAESTRO PASTELERO */
+.expert-box {
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 20px;
+  background: #FFFFFF;
+  margin-bottom: 24px;
+}
+
+.expert-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.veredicto-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.expert-content h4 {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.expert-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  background: #FAF7F6;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+/* AFINACIÓN RÁPIDA DE INGREDIENTES */
+.tweak-box {
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 20px;
+  background: #FCFAFA;
+  margin-bottom: 26px;
+}
+
+.tweak-box h4 {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.tweak-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.tweak-rows {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.tweak-item span {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.tweak-item select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  font-size: 12px;
+  font-weight: 600;
+  background: white;
+  color: var(--text-dark);
+  cursor: pointer;
+  outline: none;
+}
+
+.tweak-item select:focus {
+  border-color: var(--primary);
+}
+
+/* BOTONES FINALES */
+.actions-split {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #F2EEEE;
+}
+
+.action-footer {
+  text-align: center;
+}
+
+.link-reset {
+  font-size: 12px;
+  color: var(--primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
