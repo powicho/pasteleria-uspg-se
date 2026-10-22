@@ -40,7 +40,7 @@ pasteleria-uspg-se/
 │   ├── Historial/            # Vista de Pasteles Anteriores del Usuario
 │   │   ├── historial.html
 │   ├── Vista 1/              # Recomendación Guiada (Filtro General y Banner VIP)
-│   │   ├── index.html
+│   │   ├── index.htmlS
 │   │   ├── vista1.css
 │   │   └── vista1.js
 │   ├── Vista 2/              # Personalización Libre Capa por Capa (Con Preview en vivo)
@@ -61,74 +61,65 @@ pasteleria-uspg-se/
 ├── requirements.txt          # Librerías y dependencias del entorno
 └── README.md                 # Documentación técnica del proyecto
 
-🚀 Instalación y Puesta en Marcha
-1. Clonar el repositorio
+## 🚀 Instalación y Puesta en Marcha
 
+### 1. Clonar el repositorio
+```bash
 git clone https://github.com/powicho/pasteleria-uspg-se.git
 cd pasteleria-uspg-se
+```
 
-2. Activar el entorno virtual e instalar dependencias
-# Windows (PowerShell)
+### 2. Activar el entorno virtual e instalar dependencias
+
+**En Windows (PowerShell):**
+```powershell
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+```
 
-# Linux / macOS
+**En Linux / macOS:**
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
 
-3. Configuración de la Base de Datos (SQL Server)
-Abrir SQL Server Management Studio (SSMS 19).
-Abrir y ejecutar el script ubicado en: db/pasteleria_schema.sql.
-Esto creará la base de datos PasteleriaUSPG, las tablas Usuarios, CatalogoIngredientes, HistorialRecomendaciones y cargará los registros iniciales.
+### 3. Configuración de la Base de Datos (SQL Server)
+1. Abrir **SQL Server Management Studio (SSMS 19)**.
+2. Abrir y ejecutar el script ubicado en: `db/pasteleria_schema.sql` (o presionar `F5`).
+3. Esto creará la base de datos `PasteleriaUSPG`, las tablas `Usuarios`, `CatalogoIngredientes`, `HistorialRecomendaciones` y cargará los registros iniciales.
 
-🖥️ Ejecución del Backend (API REST)
+---
+
+## 🖥️ Ejecución del Backend (API REST)
+
 Para levantar el servidor web con recarga automática:
+```bash
 uvicorn backend.main:app --reload
-- API activa en: http://127.0.0.1:8000
-- Documentación interactiva (Swagger UI): http://127.0.0.1:8000/docs
+```
+* **API activa en:** `http://127.0.0.1:8000`
+* **Documentación interactiva (Swagger UI):** `http://127.0.0.1:8000/docs`
 
-🎨 Ejecución del Frontend (Interfaz Web)
+---
+
+## 🎨 Ejecución del Frontend (Interfaz Web)
+
 Con el backend en ejecución:
-En VS Code, navega a la carpeta frontend/Login/.
-Haz clic derecho sobre login.html y selecciona "Open with Live Server" (o ábrelo directamente en tu navegador).
-Flujo de Usuario:
-Puedes registrar una cuenta nueva o ingresar con las credenciales demo:
-Correo: leavilab@alumno.uspg.edu.gt
-Contraseña: hash_pass_123
-Al autenticarte, el sistema te redirigirá a la tienda y cargará tu recomendación exclusiva personalizada según tu historial registrado en SQL Server.
-Puedes consultar el historial completo de inferencias haciendo clic sobre tu nombre de usuario en el banner o visitando frontend/Historial/historial.html.
+1. En VS Code, navega a la carpeta `frontend/Login/`.
+2. Haz clic derecho sobre **`login.html`** y selecciona **"Open with Live Server"** (o ábrelo directamente en tu navegador).
+3. **Flujo de Usuario:**
+   * Puedes registrar una cuenta nueva o ingresar con las credenciales demo:
+     * **Correo:** `leavilab@alumno.uspg.edu.gt`
+     * **Contraseña:** `hash_pass_123`
+   * Al autenticarte, el sistema te redirigirá a la tienda y cargará tu recomendación exclusiva personalizada según tu historial registrado en SQL Server.
+   * Puedes consultar el historial completo de inferencias haciendo clic sobre tu nombre de usuario en el banner o visitando `frontend/Historial/historial.html`.
 
-🧪 Ejecución de Pruebas Automatizadas
+---
+
+## 🧪 Ejecución de Pruebas Automatizadas
+
 Para validar que las reglas de inferencia, las restricciones dietéticas y los endpoints HTTP funcionen al 100%:
-
+```bash
 pytest -v
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
