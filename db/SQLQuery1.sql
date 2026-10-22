@@ -111,3 +111,19 @@ SELECT * FROM CatalogoIngredientes;
 SELECT * FROM Usuarios;
 SELECT * FROM dbo.HistorialRecomendaciones;
 GO
+
+
+
+USE PasteleriaUSPG;
+GO
+
+-- Asignar los pasteles huérfanos a tu usuario Powi (id 4)
+UPDATE HistorialRecomendaciones 
+SET id_usuario = 4 
+WHERE id_usuario IS NULL;
+GO
+
+-- Verificar que ya tienen tu ID
+SELECT id_recomendacion, id_usuario, bizcocho_final, relleno_final, estado, regla_activada 
+FROM HistorialRecomendaciones;
+GO

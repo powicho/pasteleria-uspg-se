@@ -28,67 +28,121 @@ body {
  }
 
 .nav-brand { 
-    display: flex; align-items: center; gap: 12px; 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
 }
 
 .logo-img { 
-    height: 44px; width: auto; 
+    height: 44px;
+     width: auto; 
 }
 
 .brand-text { 
-    display: flex; flex-direction: column; 
+    display: flex; 
+    flex-direction: column; 
 }
 
 .brand-title { 
-    font-size: 20px; font-weight: 800; color: var(--primary); line-height: 1; 
+    font-size: 20px; 
+    font-weight: 800; 
+    color: var(--primary); 
+    line-height: 1; 
 }
 
 .brand-sub {
-     font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--primary); 
+     font-size: 11px; 
+     font-weight: 700;
+    letter-spacing: 3px; 
+    color: var(--primary); 
     }
 
 .nav-right { 
-    display: flex; align-items: center; gap: 16px; 
+    display: flex;
+    align-items: center; 
+    gap: 16px; 
 }
 
 .status-pill { 
-    display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #27AE60; background: #E8F8F5; padding: 6px 14px; border-radius: 20px;
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    font-size: 13px; 
+    font-weight: 600; 
+    color: #27AE60; 
+    background: #E8F8F5; 
+    padding: 6px 14px; 
+    border-radius: 20px;
  }
 
 .status-dot { 
-    width: 8px; height: 8px; border-radius: 50%; background: #27AE60; 
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%; 
+    background: #27AE60; 
 }
 
 .uspg-badge { 
-    background: var(--primary); color: white; font-size: 10px; font-weight: 800; padding: 6px 12px; border-radius: 6px; letter-spacing: 1px; 
+    background: var(--primary); 
+    color: white; 
+    font-size: 10px; 
+    font-weight: 800;
+    padding: 6px 12px;
+     border-radius: 6px; 
+     letter-spacing: 1px; 
 }
 
 .main-container { 
-    max-width: 960px; margin: 30px auto; padding: 0 20px; 
+    max-width: 960px; 
+    margin: 30px auto;
+     padding: 0 20px; 
 }
 
 .mode-switch-container { 
-    display: flex; justify-content: center; gap: 14px; margin-bottom: 26px; 
+    display: flex; 
+    -content: center; 
+    gap: 14px; 
+    margin-bottom: 26px; 
 }
 
 .mode-btn { 
-    background: transparent; border: 1.5px solid var(--primary); color: var(--primary); padding: 10px 24px; border-radius: 30px; font-size: 14px; font-weight: 700; text-decoration: none; transition: 0.2s; }
+    background: transparent; 
+    border: 1.5px solid var(--primary); 
+    color: var(--primary); 
+    padding: 10px 24px;
+     border-radius: 30px; 
+     font-size: 14px;
+      font-weight: 700;
+       text-decoration: none; 
+       transition: 0.2s; 
+    }
 .mode-btn.active { 
-    background: var(--primary); color: white; 
+    background: var(--primary); 
+    color: white; 
 }
 
 .card-panel { 
-    background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 16px; padding: 36px 40px; box-shadow: 0 4px 16px rgba(0,0,0,0.02); }
+    background: var(--bg-card); 
+    border: 1px solid var(--border-light); 
+    border-radius: 16px; 
+    padding: 36px 40px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+ }
+
 .view-header { 
-    text-align: center; margin-bottom: 30px;
+    text-align: center; 
+    margin-bottom: 30px;
 }
 
 .view-header h2 { 
-    font-size: 24px; font-weight: 800; margin-bottom: 6px;
+    font-size: 24px; 
+    font-weight: 800;
+     margin-bottom: 6px;
  }
 
 .view-header p { 
-    color: var(--text-muted); font-size: 14px; 
+    color: var(--text-muted); 
+    font-size: 14px; 
 }
 
 .filter-group { 
@@ -96,7 +150,8 @@ body {
 }
 
 .group-label { 
-    display: block; font-size: 13px; 
+    display: block; 
+    font-size: 13px; 
     font-weight: 700; 
     margin-bottom: 12px; 
 }
@@ -104,35 +159,57 @@ body {
 .pill-selector { 
     display: flex; gap: 12px; }
 .pill-btn { 
-    background: white; border: 1px solid var(--border-light); padding: 8px 22px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--text-dark); 
+    background: white; 
+    border: 1px solid var(--border-light);
+     padding: 8px 22px;
+      border-radius: 20px; 
+      font-size: 13px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      color: var(--text-dark); 
 }
 
 .pill-btn.active { 
-    background: #2A1D1D; color: white; border-color: #2A1D1D; 
+    background: #2A1D1D; 
+    color: white; 
+    border-color: #2A1D1D; 
 }
 
 .profile-cards-grid { 
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    display: grid;
+     grid-template-columns: repeat(3, 1fr); 
+     gap: 16px;
 }
 
 .profile-card { 
-    border: 1.5px solid var(--border-light); border-radius: 14px; padding: 22px; cursor: pointer; transition: all 0.2s; 
+    border: 1.5px solid var(--border-light); 
+    border-radius: 14px; padding: 22px;
+     cursor: pointer; 
+     transition: all 0.2s; 
 }
 
 .profile-card.active { 
-    border-color: var(--primary); background: #FFF9F8; 
+    border-color: var(--primary); 
+    background: #FFF9F8; 
 }
 
 .color-dot { 
-    display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-bottom: 12px; 
+    display: inline-block; width: 14px; 
+    height: 14px;
+    border-radius: 50%;
+    margin-bottom: 12px; 
 }
 
 .profile-card h3 {
-    font-size: 16px; font-weight: 700; margin-bottom: 6px; 
+    font-size: 16px; 
+    font-weight: 700; 
+    margin-bottom: 6px; 
 }
 
 .profile-card p { 
-    font-size: 12px; color: var(--text-muted); line-height: 1.4; 
+    font-size: 12px;
+     color: var(--text-muted);
+      line-height: 1.4; 
 }
 
 .action-row { 
@@ -150,4 +227,128 @@ body {
 
 .btn-primary:hover { 
     background: var(--primary-hover); 
+}
+
+/* BANNER DE RECOMENDACIÓN VIP / PERSONALIZADO */
+.personal-banner {
+  background: linear-gradient(135deg, #FFFDF8 0%, #FFF8EE 100%);
+  border: 1.5px solid #F39C12;
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(243, 156, 18, 0.08);
+}
+
+.pb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.pb-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: #B7791F;
+  letter-spacing: 1px;
+}
+
+.user-tag {
+  background: var(--primary);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.user-tag:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(138, 28, 20, 0.25);
+}
+
+.personal-banner h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.personal-banner p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.pb-chips {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.chip-item {
+  flex: 1;
+  background: white;
+  border: 1px solid #EEDBC5;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.chip-item small {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  color: #B7791F;
+  text-transform: uppercase;
+}
+
+.chip-item strong {
+  font-size: 12px;
+  color: var(--text-dark);
+}
+
+.btn-quick-order {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-quick-order:hover {
+  background: var(--primary-hover);
+}
+
+
+/* BOTÓN SALIR / CERRAR SESIÓN */
+.btn-logout {
+  background: #FAF7F6;
+  color: var(--primary);
+  border: 1px solid var(--border-light);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
 }

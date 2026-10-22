@@ -34,14 +34,20 @@ async function validarCombinacion() {
   };
 
   try {
-    const res = await fetch(`${API_URL}/recomendar`, {
+    // 👤 Detectar si hay un usuario logueado para guardar su ID en SQL Server
+    const user = JSON.parse(localStorage.getItem("usuarioActivo") || "{}");
+    const urlApi = user.id_usuario 
+      ? `${API_URL}/recomendar?id_usuario=${user.id_usuario}` 
+      : `${API_URL}/recomendar`;
+
+    const res = await fetch(urlApi, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     });
 
     const data = await res.json();
-    
+
     // Guardar en sesión y viajar a Vista 4 (el resumen interactivo)
     sessionStorage.setItem("resultadoPastel", JSON.stringify(data));
     sessionStorage.setItem("seleccionActual", JSON.stringify(seleccion));

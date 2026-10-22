@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pastelería USPG - Iniciar Sesión</title>
+  <link rel="stylesheet" href="login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="login-card">
+    <div class="login-header">
+      <img src="../img/logo.png" alt="Logo" class="logo-img">
+      <h2>Pastelería USPG</h2>
+      <p>Inicia sesión para recibir tus recomendaciones personalizadas</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs-auth">
+      <button class="tab-btn active" id="tab-login" onclick="cambiarAuth('login')">Ingresar</button>
+      <button class="tab-btn" id="tab-registro" onclick="cambiarAuth('registro')">Crear Cuenta</button>
+    </div>
+
+    <!-- FORMULARIO LOGIN -->
+    <form id="form-login" onsubmit="hacerLogin(event)">
+     <div class="form-group">
+        <label>Correo Electrónico</label>
+        <input type="email" id="log-correo" placeholder="ejemplo@correo.com" required>
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" id="log-pass" placeholder="Tu contraseña" required>
+      </div>
+      <button type="submit" class="btn-submit">Ingresar a la Pastelería</button>
+      <div class="demo-hint">
+        <small>💡 Usuarios demo de SQL Server listos:<br>
+        • Luis Avila: <code>leavilab@alumno.uspg.edu.gt</code> (Sin lactosa)<br>
+        • Dylan Telon: <code>datelonz@alumno.uspg.edu.gt</code> (Chocolatoso)</small>
+      </div>
+    </form>
+
+<!-- FORMULARIO REGISTRO LIMPIO -->
+    <form id="form-registro" onsubmit="hacerRegistro(event)" style="display:none;">
+      <div class="form-group">
+        <label>Nombre Completo</label>
+        <input type="text" id="reg-nombre" placeholder="Tu nombre" required>
+      </div>
+      <div class="form-group">
+        <label>Correo Electrónico</label>
+        <input type="email" id="reg-correo" placeholder="correo@alumno.uspg.edu.gt" required>
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" id="reg-pass" placeholder="Crea una contraseña" required>
+      </div>
+      <div class="form-group">
+        <label>Restricción Alimentaria</label>
+        <select id="reg-restriccion">
+          <option value="ninguna">Ninguna (Como de todo)</option>
+          <option value="sin-lactosa">Intolerante a la Lactosa 🌱</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-submit">Registrarme</button>
+    </form>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

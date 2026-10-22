@@ -20,21 +20,49 @@
         <span class="brand-sub">U S P G</span>
       </div>
     </div>
-    <div class="nav-right">
+ <div class="nav-right">
       <div class="status-pill" id="api-status">
         <span class="status-dot"></span>
         <span id="api-status-text">API Online</span>
       </div>
       <div class="uspg-badge">SAN PABLO</div>
+
+      <!-- 🚪 BOTÓN DE CERRAR SESIÓN -->
+      <button type="button" class="btn-logout" id="btn-logout" onclick="cerrarSesion()" style="display:none;" title="Cerrar sesión">Salir 🚪</button>
     </div>
   </header>
 
+
+
   <!-- NAVEGACIÓN ENTRE VISTAS -->
   <main class="main-container">
+
+    <!-- ✅ COLÓCALO AQUÍ ADENTRO: -->
+    <div id="banner-personalizado" class="personal-banner" style="display:none;">
+      <div class="pb-header">
+        <span class="pb-tag">⭐ RECOMENDACIÓN EXCLUSIVA PARA TI</span>
+       <a href="../Historial/historial.html" class="user-tag" id="user-display-name" title="Ver mi historial de pasteles guardados">👤 Usuario</a>
+      </div>
+      <h3 id="pb-titulo">Pastel Sugerido por el Chef</h3>
+      <p id="pb-desc">Basado en tus preferencias anteriores en Pastelería USPG.</p>
+      
+      <div class="pb-chips">
+        <div class="chip-item"><small>Bizcocho</small><strong id="pb-b">-</strong></div>
+        <div class="chip-item"><small>Relleno</small><strong id="pb-r">-</strong></div>
+        <div class="chip-item"><small>Cobertura</small><strong id="pb-c">-</strong></div>
+      </div>
+
+      <div class="pb-actions">
+        <button type="button" class="btn-quick-order" onclick="ordenarPersonalizado()">Aprobar este pastel de inmediato</button>
+      </div>
+    </div>
+
+    <!-- Pestañas -->
     <nav class="mode-switch-container">
       <a href="index.html" class="mode-btn active">Recomendación Guiada</a>
       <a href="../Vista 2/vista2.html" class="mode-btn">Personalización Libre</a>
     </nav>
+
 
     <section class="card-panel">
       <div class="view-header">

@@ -85,3 +85,22 @@ class HealthCheck(BaseModel):
   sistema: str
   motor: str
   integracion: str
+
+
+  # Modelos para Autenticación y Usuarios
+class UsuarioRegistro(BaseModel):
+  nombre: str
+  correo: str
+  password: str
+  restriccion_predeterminada: Optional[str] = "ninguna"
+  perfil_favorito: Optional[str] = None  # <-- Puede quedar vacío al registrarse
+
+
+class UsuarioLogin(BaseModel):
+  correo: str
+  password: str
+
+
+# Modifica SolicitudRecomendacion para que acepte id_usuario opcional:
+# (Agrega este campo dentro de la clase SolicitudRecomendacion que ya tienes)
+# id_usuario: Optional[int] = None

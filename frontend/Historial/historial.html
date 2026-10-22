@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pastelería USPG - Mis Pasteles</title>
+  <link rel="stylesheet" href="../Vista 1/vista1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .historial-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+    .historial-table th, .historial-table td { padding: 12px; border: 1px solid #ECE5E3; text-align: left; }
+    .historial-table th { background: #FAF7F6; font-weight: 700; }
+    .tag-viable { background: #D5F5E3; color: #1E8449; padding: 4px 8px; border-radius: 4px; font-weight: 700; font-size: 11px; }
+    .tag-ajustada { background: #FDEBD0; color: #B9770E; padding: 4px 8px; border-radius: 4px; font-weight: 700; font-size: 11px; }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-brand">
+      <img src="../img/logo.png" alt="Logo" class="logo-img">
+      <div class="brand-text"><span class="brand-title">Pastelería</span><span class="brand-sub">U S P G</span></div>
+    </div>
+    <div class="nav-right">
+      <a href="../Vista 1/index.html" class="mode-btn">Volver a la Tienda</a>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="card-panel">
+      <h2>📜 Mis Pasteles Guardados</h2>
+      <p style="color:#777; font-size:13px; margin-bottom:20px;">Registro histórico de inferencias de CLIPS asociadas a tu cuenta.</p>
+      
+      <table class="historial-table">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Bizcocho</th>
+            <th>Relleno</th>
+            <th>Cobertura</th>
+            <th>Veredicto CLIPS</th>
+            <th>Regla Disparada</th>
+          </tr>
+        </thead>
+        <tbody id="historial-tbody">
+          <tr><td colspan="6" style="text-align:center;">Cargando historial desde la base de datos...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", async () => {
+      const user = JSON.parse(localStorage.getItem("usuarioActivo") || "{}");
+      if (!user.id_usuario) {
+        alert("Debes iniciar sesión para ver tu historial.");
+        window.location.href = "../Login/login.html";
+        return;
+      }
+
+      const res = await fetch(`http://127.0.0.1:8000/api/v1/usuarios/${user.id_usuario}/historial`);
+      const lista = await res.json();
+      const tbody = document.getElementById("historial-tbody");
+
+      if (lista.length === 0) {
+        tbody.innerHTML = "<tr><td colspan='6' style='text-align:center;'>Aún no has confirmado ningún pastel.</td></tr>";
+        return;
+      }
+
+      tbody.innerHTML = lista.map(item => `
+        <tr>
+          <td>${item.fecha}</td>
+          <td><strong>${item.bizcocho || '-'}</strong></td>
+          <td><strong>${item.relleno || '-'}</strong></td>
+          <td><strong>${item.cobertura || '-'}</strong></td>
+          <td><span class="${item.estado === 'viable' ? 'tag-viable' : 'tag-ajustada'}">${item.estado.toUpperCase()}</span></td>
+          <td><small>${item.regla}</small></td>
+        </tr>
+      `).join("");
+    });
+  </script>
+</body>
+</html>
