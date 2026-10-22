@@ -61,6 +61,7 @@ pasteleria-uspg-se/
 ├── requirements.txt          # Librerías y dependencias del entorno
 └── README.md                 # Documentación técnica del proyecto
 
+```
 ## 🚀 Instalación y Puesta en Marcha
 
 ### 1. Clonar el repositorio
